@@ -30,19 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderToys(toys){
     console.log(toys);
-    for(let toy in toys){
-      toyFormContainer.appendChild(createToyCard(toy));
-    }
-    // for(let toyId in toyIds) {
-    //   console.log(`renderToys: toyId: ${toyId}`);
-    //   const toy = fetchIndividualToy(toyId);
-    //   console.log(`renderToys: toy: ${toy[0]}`);
-    //
-    //   toyFormContainer.appendChild(createToyCard(toy));
-    // }
+    toys.forEach(toy => {
+      console.log(toy)
+      toyFormContainer.appendChild(createCardForToy(toy));
+    })
   }
 
-  function createToyCard(toy){
+  function createCardForToy(toy){
     const newToyDiv = document.createElement("div");
     newToyDiv.className = "card";
 

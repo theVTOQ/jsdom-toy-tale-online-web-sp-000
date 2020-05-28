@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function fetchIndividualToy(id){
-  return fetch(`http://localhost:3000/toys/${toy.id}`)
+  return fetch(`http://localhost:3000/toys/${id}`)
   .then(response => response.json())
   .then(json => console.log(json))
   .catch(error => alert(error.message));

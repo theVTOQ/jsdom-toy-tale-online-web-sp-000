@@ -16,7 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const addToyForm = document.querySelector(".add-toy-form");
   addToyForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    createNewToyWithFetch(name, img);
+    const newToyName = document.getElementsByTagName("input")[0].value;
+    const newToyImage = document.getElementsByTagName("input")[1].value;
+    
+    createNewToyWithFetch(newToyName, newToyImage);
   });
 
   fetch("http://localhost:3000/toys")

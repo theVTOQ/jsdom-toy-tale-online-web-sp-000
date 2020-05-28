@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // function appendChildCardToContainer(card){
-//   
+//
 // }
 
 function createCardForToy(toy){

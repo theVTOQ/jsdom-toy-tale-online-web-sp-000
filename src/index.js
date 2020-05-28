@@ -1,8 +1,8 @@
 let addToy = false;
+const toyFormContainer = document.querySelector(".container");
 
 document.addEventListener("DOMContentLoaded", () => {
   const addBtn = document.querySelector("#new-toy-btn");
-  const toyFormContainer = document.querySelector(".container");
   addBtn.addEventListener("click", () => {
     // hide & seek with the form
     addToy = !addToy;
@@ -39,9 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// function appendChildCardToContainer(card){
-//
-// }
+function appendChildCardToContainer(card){
+
+}
 
 function createCardForToy(toy){
   const newToyDiv = document.createElement("div");

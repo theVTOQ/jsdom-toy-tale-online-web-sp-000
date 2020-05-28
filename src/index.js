@@ -97,3 +97,10 @@ document.addEventListener("DOMContentLoaded", () => {
     return newToyDiv;
   }
 });
+
+function fetchIndividualToy(id){
+  return fetch(`http://localhost:3000/toys/${toy.id}`)
+  .then(response => response.json())
+  .then(json => console.log(json))
+  .catch(error => alert(error.message));
+}

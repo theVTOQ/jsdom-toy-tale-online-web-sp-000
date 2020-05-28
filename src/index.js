@@ -102,8 +102,10 @@ function createNewToyWithFetch(name, image){
     body: JSON.stringify(formData)
   };
 
-  return fetch("http://localhost:3000/toys", configurationObject)
+  const newToy = fetch("http://localhost:3000/toys", configurationObject)
   .then(response => response.json())
   .then(object => console.log(object))
   .catch(error => alert(error.message));
+
+  renderToys([newToy]);
 }

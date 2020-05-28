@@ -16,28 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const addToyForm = document.querySelector(".add-toy-form");
   addToyForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    const newToyName = document.getElementsByTagName("input")[0].value;
-    const newToyImage = document.getElementsByTagName("input")[1].value;
-
-    let formData = {
-      name: newToyName,
-      image: newToyImage,
-      likes: 0
-    };
-
-    let configurationObject = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify(formData)
-    };
-
-    fetch("http://localhost:3000/toys", configurationObject)
-    .then(response => response.json())
-    .then(object => console.log(object))
-    .catch(error => alert(error.message));
+    createNewToyWithFetch(name, img);
   });
 
   fetch("http://localhost:3000/toys")
@@ -103,5 +82,27 @@ function fetchIndividualToy(id){
   return fetch(`http://localhost:3000/toys/${toy.id}`)
   .then(response => response.json())
   .then(json => console.log(json))
+  .catch(error => alert(error.message));
+}
+
+function createNewToyWithFetch(name, img){
+  let formData = {
+    name: name,
+    image: image,
+    likes: 0
+  };
+
+  let configurationObject = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(formData)
+  };
+
+  return fetch("http://localhost:3000/toys", configurationObject)
+  .then(response => response.json())
+  .then(object => console.log(object))
   .catch(error => alert(error.message));
 }

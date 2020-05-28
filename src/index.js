@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     toyHeading.innerHTML = toy.name;
 
     const toyImg = document.createElement("img");
-    toyImg.src = toy.image;
+    toyImg.src = JSON.stringify(toy.image);
     toyImg.className = "toy-avatar";
 
     const toyLikes = document.createElement("p");

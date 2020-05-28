@@ -29,13 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
   .catch(error => alert(error.message));
 
   function renderToys(toyIds){
-    for(let toyId in toyIds) {
-      console.log(`renderToys: toyId: ${toyId}`);
-      const toy = fetchIndividualToy(toyId);
-      console.log(`renderToys: toy: ${toy[0]}`);
-
-      toyFormContainer.appendChild(createToyCard(toy));
-    }
+    console.log(toyIds);
+    // for(let toyId in toyIds) {
+    //   console.log(`renderToys: toyId: ${toyId}`);
+    //   const toy = fetchIndividualToy(toyId);
+    //   console.log(`renderToys: toy: ${toy[0]}`);
+    //
+    //   toyFormContainer.appendChild(createToyCard(toy));
+    // }
   }
 
   function createToyCard(toy){

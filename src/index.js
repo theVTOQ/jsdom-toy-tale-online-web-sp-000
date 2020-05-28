@@ -46,8 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
   .catch(error => alert(error.message));
 
   function renderToys(toys){
-    console.log(`createToyCard: ${toys}`);
     for(let toy in toys) {
+      console.log(`renderToys: 1.${toy[0]} 2.${toy[0]}`);
+      
       toyFormContainer.appendChild(createToyCard(toy));
     }
   }

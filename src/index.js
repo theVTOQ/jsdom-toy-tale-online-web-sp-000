@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     const newToyName = document.getElementsByTagName("input")[0].value;
     const newToyImage = document.getElementsByTagName("input")[1].value;
-    
+
     createNewToyWithFetch(newToyName, newToyImage);
   });
 

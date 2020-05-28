@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderToys(toys){
     toys.forEach(toy => {
-      toyFormContainer.appendChild(createCardForToy(toy));
+      appendChildCardToContainer(createCardForToy(toy));
     })
   }
 });

@@ -117,5 +117,5 @@ function createNewToyWithFetch(name, image){
 }
 
 function editImageWithId(id, name, image){
-  
+
 }

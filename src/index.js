@@ -41,12 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   fetch("http://localhost:3000/toys")
-  .then(response => response.json())
+  .then(response => {
+    console.log(response);
+    return response.json();
+  })
   .then(objects => renderToys(objects))
   .catch(error => alert(error.message));
 
-  function renderToys(toys){
-    for(let toy in toys) {
+  function renderToys(toyIds){
+    for(let toyId in toyIds) {
+      const toy = fetchIndividualToy(toyId);
       console.log(`renderToys: 1.${toy[0]} 2.${toy[0]}`);
 
       toyFormContainer.appendChild(createToyCard(toy));

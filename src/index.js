@@ -28,8 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
   .then(objects => renderToys(objects))
   .catch(error => alert(error.message));
 
-  function renderToys(toyIds){
-    console.log(toyIds);
+  function renderToys(toys){
+    console.log(toys);
+    for(let toy in toys){
+      createCardForToy(toy);
+    }
     // for(let toyId in toyIds) {
     //   console.log(`renderToys: toyId: ${toyId}`);
     //   const toy = fetchIndividualToy(toyId);

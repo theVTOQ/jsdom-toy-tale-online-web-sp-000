@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for(let toyId in toyIds) {
       console.log(`renderToys: toyId: ${toyId}`);
       const toy = fetchIndividualToy(toyId);
-      console.log(`renderToys: toy: ${toy}`);
+      console.log(`renderToys: toy: ${toy.object}`);
 
       toyFormContainer.appendChild(createToyCard(toy));
     }

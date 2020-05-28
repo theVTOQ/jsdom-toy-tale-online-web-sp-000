@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     toyHeading.innerHTML = toy.name;
 
     const toyImg = document.createElement("img");
-    console.log(toy.image);
+    console.log(toy["image"]);
     toyImg.src = toy.image;
     toyImg.className = "toy-avatar";
 

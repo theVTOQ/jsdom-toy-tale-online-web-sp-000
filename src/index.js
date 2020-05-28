@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function createToyCard(toy){
+    console.log(`createToyCard: ${toy}`);
     const newToyDiv = document.createElement("div");
     newToyDiv.className = "card";
 
@@ -83,7 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       fetch(`http://localhost:3000/toys/${toy.id}`, configurationObject)
       .then(response => response.json())
-      .then(json => console.log(json));
+      .then(json => console.log(json))
+      .catch(error => alert(error.message));
     })
 
     const divChildren = [toyHeading, toyImg, toyLikes, toyLikeButton];

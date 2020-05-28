@@ -41,10 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   fetch("http://localhost:3000/toys")
-  .then(response => {
-    console.log(response.json());
-    return response.json();
-  })
+  .then(response => response.json())
   .then(objects => renderToys(objects))
   .catch(error => alert(error.message));
 

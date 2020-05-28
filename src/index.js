@@ -29,57 +29,55 @@ document.addEventListener("DOMContentLoaded", () => {
   .catch(error => alert(error.message));
 
   function renderToys(toys){
-    console.log(toys);
     toys.forEach(toy => {
-      console.log(toy)
       toyFormContainer.appendChild(createCardForToy(toy));
     })
   }
-
-  function createCardForToy(toy){
-    const newToyDiv = document.createElement("div");
-    newToyDiv.className = "card";
-
-    const toyHeading = document.createElement("h2");
-    toyHeading.innerHTML = toy.name;
-
-    const toyImg = document.createElement("img");
-    console.log(toy["image"]);
-    toyImg.src = toy.image;
-    toyImg.className = "toy-avatar";
-
-    const toyLikes = document.createElement("p");
-    toyLikes.innerHTML = `${toy.likes} Likes`;
-
-    const toyLikeButton = document.createElement("BUTTON");
-    toyLikeButton.className = "like-btn";
-    toyLikeButton.innerHTML = "Like <3";
-
-    toyLikeButton.addEventListener("click", () => {
-      let data = { likes: toy.likes + 1 }
-      let configurationObject = {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(data)
-      }
-
-      fetch(`http://localhost:3000/toys/${toy.id}`, configurationObject)
-      .then(response => response.json())
-      .then(json => console.log(json))
-      .catch(error => alert(error.message));
-    })
-
-    const divChildren = [toyHeading, toyImg, toyLikes, toyLikeButton];
-    divChildren.forEach(child => {
-      newToyDiv.appendChild(child);
-    });
-
-    return newToyDiv;
-  }
 });
+
+function createCardForToy(toy){
+  const newToyDiv = document.createElement("div");
+  newToyDiv.className = "card";
+
+  const toyHeading = document.createElement("h2");
+  toyHeading.innerHTML = toy.name;
+
+  const toyImg = document.createElement("img");
+  console.log(toy["image"]);
+  toyImg.src = toy.image;
+  toyImg.className = "toy-avatar";
+
+  const toyLikes = document.createElement("p");
+  toyLikes.innerHTML = `${toy.likes} Likes`;
+
+  const toyLikeButton = document.createElement("BUTTON");
+  toyLikeButton.className = "like-btn";
+  toyLikeButton.innerHTML = "Like <3";
+
+  toyLikeButton.addEventListener("click", () => {
+    let data = { likes: toy.likes + 1 }
+    let configurationObject = {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(data)
+    }
+
+    fetch(`http://localhost:3000/toys/${toy.id}`, configurationObject)
+    .then(response => response.json())
+    .then(json => console.log(json))
+    .catch(error => alert(error.message));
+  })
+
+  const divChildren = [toyHeading, toyImg, toyLikes, toyLikeButton];
+  divChildren.forEach(child => {
+    newToyDiv.appendChild(child);
+  });
+
+  return newToyDiv;
+}
 
 function fetchIndividualToy(id){
   return fetch(`http://localhost:3000/toys/${id}`)

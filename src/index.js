@@ -61,20 +61,6 @@ function createCardForToy(toy){
   toyLikeButton.addEventListener("click", () => {
     const newLikesTotal = parseInt(toy.likes) + 1;
     editImageWithId(toy.id, toy.name, newLikesTotal);
-    let data = { likes: toy.likes + 1 }
-    let configurationObject = {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify(data)
-    }
-
-    fetch(`http://localhost:3000/toys/${toy.id}`, configurationObject)
-    .then(response => response.json())
-    .then(json => console.log(json))
-    .catch(error => alert(error.message));
   })
 
   const divChildren = [toyHeading, toyImg, toyLikes, toyLikeButton];

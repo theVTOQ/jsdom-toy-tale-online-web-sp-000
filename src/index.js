@@ -46,13 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
   .catch(error => alert(error.message));
 
   function renderToys(toys){
+    console.log(`createToyCard: ${toys}`);
     for(let toy in toys) {
       toyFormContainer.appendChild(createToyCard(toy));
     }
   }
 
   function createToyCard(toy){
-    console.log(`createToyCard: ${toy}`);
     const newToyDiv = document.createElement("div");
     newToyDiv.className = "card";
 

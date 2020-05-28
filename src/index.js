@@ -71,13 +71,6 @@ function createCardForToy(toy){
   return newToyDiv;
 }
 
-function fetchIndividualToy(id){
-  return fetch(`http://localhost:3000/toys/${id}`)
-  .then(response => response.json())
-  .then(json => console.log(json))
-  .catch(error => alert(error.message));
-}
-
 function createNewToyWithFetch(name, image){
   let formData = {
     name: name,
@@ -103,5 +96,25 @@ function createNewToyWithFetch(name, image){
 }
 
 function editImageWithId(id, name, image){
+  let data = { likes: toy.likes + 1 }
+  let configurationObject = {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(data)
+  }
 
+  fetch(`http://localhost:3000/toys/${toy.id}`, configurationObject)
+  .then(response => response.json())
+  .then(json => console.log(json))
+  .catch(error => alert(error.message));
+}
+
+function fetchIndividualToy(id){
+  return fetch(`http://localhost:3000/toys/${id}`)
+  .then(response => response.json())
+  .then(json => console.log(json))
+  .catch(error => alert(error.message));
 }

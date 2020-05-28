@@ -86,7 +86,7 @@ function fetchIndividualToy(id){
   .catch(error => alert(error.message));
 }
 
-function createNewToyWithFetch(name, img){
+function createNewToyWithFetch(name, image){
   let formData = {
     name: name,
     image: image,

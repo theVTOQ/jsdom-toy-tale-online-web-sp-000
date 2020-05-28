@@ -98,6 +98,7 @@ function createNewToyWithFetch(name, image){
 
   //renderToys([newToy]);
   appendChildCardToContainer(newToy);
+  return newToy;
 }
 
 function editImageWithId(id, name, image){

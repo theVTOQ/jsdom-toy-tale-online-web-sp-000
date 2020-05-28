@@ -59,6 +59,8 @@ function createCardForToy(toy){
   toyLikeButton.innerHTML = "Like <3";
 
   toyLikeButton.addEventListener("click", () => {
+    const newLikesTotal = parseInt(toy.likes) + 1;
+    editImageWithId(toy.id, toy.name, newLikesTotal);
     let data = { likes: toy.likes + 1 }
     let configurationObject = {
       method: "PATCH",
@@ -112,4 +114,8 @@ function createNewToyWithFetch(name, image){
   .catch(error => alert(error.message));
 
   renderToys([newToy]);
+}
+
+function editImageWithId(id, name, image){
+  
 }

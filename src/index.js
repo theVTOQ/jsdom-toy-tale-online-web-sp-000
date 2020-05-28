@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     createNewToyWithFetch(newToyName, newToyImage);
   });
 
+  //fetch and render all toys:
   fetch("http://localhost:3000/toys")
   .then(response => response.json())
   .then(objects => renderToys(objects))
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderToys(toys){
     for(let toy in toys) {
-      console.log(`renderToys: 1.${toy[0]} 2.${toy[0]}`);
+      console.log(`renderToys: 1.${toy[0]} 2.${toy[1]}`);
 //      const toy = fetchIndividualToy(toyId);
 
       toyFormContainer.appendChild(createToyCard(toy));

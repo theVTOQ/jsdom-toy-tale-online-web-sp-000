@@ -19,8 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const newToyName = document.getElementsByTagName("input")[0].value;
     const newToyImage = document.getElementsByTagName("input")[1].value;
 
-    createNewToyWithFetch(newToyName, newToyImage);
+    createNewToy(newToyName, newToyImage);
   });
+
+  function createNewToy(newToyName, newToyImage){
+    renderToys([createNewToyWithFetch(newToyName, newToyImage)]);
+  }
 
   //fetch and render all toys:
   fetch("http://localhost:3000/toys")

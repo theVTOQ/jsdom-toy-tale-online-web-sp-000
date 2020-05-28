@@ -39,6 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// function appendChildCardToContainer(card){
+//   
+// }
+
 function createCardForToy(toy){
   const newToyDiv = document.createElement("div");
   newToyDiv.className = "card";

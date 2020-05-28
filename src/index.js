@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderToys(toys){
     for(let toy in toys) {
       console.log(`renderToys: 1.${toy[0]} 2.${toy[0]}`);
+//      const toy = fetchIndividualToy(toyId);
 
       toyFormContainer.appendChild(createToyCard(toy));
     }

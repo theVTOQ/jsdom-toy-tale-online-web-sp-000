@@ -96,7 +96,8 @@ function createNewToyWithFetch(name, image){
   .then(object => console.log(object))
   .catch(error => alert(error.message));
 
-  renderToys([newToy]);
+  //renderToys([newToy]);
+  appendChildCardToContainer(newToy);
 }
 
 function editImageWithId(id, name, image){

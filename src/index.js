@@ -36,7 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetch("http://localhost:3000/toys", configurationObject)
     .then(response => response.json())
-    .then(object => console.log(object));
+    .then(object => console.log(object))
+    .catch(error => alert(error.message));
   });
 
   fetch("http://localhost:3000/toys")

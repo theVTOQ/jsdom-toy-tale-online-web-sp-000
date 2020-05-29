@@ -70,7 +70,7 @@ function createCardForToy(toy){
     //const likesForCard = existingCard.querySelector("p");
     // console.log(`Updated Toy: ${updatedToy}`);
     // console.log(`Updated Likes: ${updatedToy.likes}`);
-    // 
+    //
     // likesForCard.innerText = `${updatedToy.likes} Likes`;
     //existingCard.remove();
 

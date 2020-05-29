@@ -124,7 +124,7 @@ function editToyWithId(id, name, image, likes){
   .then(json => console.log(json))
   .catch(error => alert(error.message));
 
-  const existingCard = document.getElementById(`toy-with-id-${editedToy.id}`);
+  const existingCard = document.getElementById(`toy-with-id-${id}`);
   existingCard.remove();
   appendChildCardToContainer(createCardForToy(editedToy));
 }

@@ -68,6 +68,7 @@ function createCardForToy(toy){
 
     const existingCard = document.getElementById(`toy-with-id-${toy.id}`);
     const likesForCard = existingCard.querySelector("p");
+    console.log(`Updated Likes: ${updatedToy}`);
     console.log(`Updated Likes: ${updatedToy.likes}`);
 
     likesForCard.innerText = `${updatedToy.likes} Likes`;

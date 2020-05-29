@@ -88,7 +88,6 @@ function incrementLikesForToyWithId(id){
   const newLikesTotal = currentLikes + 1;
   updateToyWithId(toy.id, toy.name, toy.image, newLikesTotal);
   likesDisplay.innerHTML = newLikesTotal;
-  return newLikesTotal;
 }
 
 function createNewToyWithFetch(name, image){

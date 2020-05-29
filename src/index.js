@@ -124,7 +124,7 @@ function editToyWithId(id, name, image, likes){
 }
 
 function getToyFormContainer(){
-  return document.querySelector(".container");  
+  return document.querySelector(".container");
 }
 
 function fetchIndividualToy(id){

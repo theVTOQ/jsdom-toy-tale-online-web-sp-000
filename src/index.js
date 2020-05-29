@@ -1,5 +1,4 @@
 let addToy = false;
-const toyFormContainer = document.querySelector(".container");
 
 document.addEventListener("DOMContentLoaded", () => {
   const addBtn = document.querySelector("#new-toy-btn");
@@ -122,6 +121,10 @@ function editToyWithId(id, name, image, likes){
   .then(response => response.json())
   .then(json => console.log(json))
   .catch(error => alert(error.message));
+}
+
+function getToyFormContainer(){
+  return document.querySelector(".container");  
 }
 
 function fetchIndividualToy(id){

@@ -75,7 +75,7 @@ function createCardForToy(toy){
 }
 
 function incrementLikesForToyWithId(id){
-  const toy = 
+  const toy =
   let newLikesTotal = parseInt(toy.likes) + 1;
   const updatedToy = updateToyWithId(toy.id, toy.name, toy.image, newLikesTotal);
   toyLikes.innerHTML = `${newLikesTotal} Likes`;

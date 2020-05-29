@@ -108,6 +108,7 @@ function editToyWithId(id, name, image, likes){
     image: image,
     likes: likes
   }
+  
   let configurationObject = {
     method: "PATCH",
     headers: {

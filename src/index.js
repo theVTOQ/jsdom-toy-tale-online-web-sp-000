@@ -62,11 +62,6 @@ function createCardForToy(toy){
   toyLikeButton.className = "like-btn";
   toyLikeButton.innerHTML = "Like <3";
 
-  toyLikeButton.addEventListener("click", function(){
-    //const likesTotal = document.querySelector(`#toy-with-id${toy.id}`);
-    toyLikes.innerHTML = incrementLikesForToyWithId(toy.id);
-  });
-
   const divChildren = [toyHeading, toyImg, toyLikes, toyLikeButton];
   divChildren.forEach(child => {
     newToyDiv.appendChild(child);

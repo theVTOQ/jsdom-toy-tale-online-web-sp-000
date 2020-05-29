@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function appendChildCardToContainer(card){
-  toyFormContainer.appendChild(card);
+  getToyFormContainer().appendChild(card);
 }
 
 function createCardForToy(toy){

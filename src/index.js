@@ -118,7 +118,7 @@ function editToyWithId(id, name, image, likes){
     body: JSON.stringify(data)
   }
 
-  fetch(`http://localhost:3000/toys/${toy.id}`, configurationObject)
+  return fetch(`http://localhost:3000/toys/${toy.id}`, configurationObject)
   .then(response => response.json())
   .then(json => console.log(json))
   .catch(error => alert(error.message));

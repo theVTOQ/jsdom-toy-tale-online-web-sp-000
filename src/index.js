@@ -33,14 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
   .catch(error => alert(error.message));
 
   //add event listeners...
-  function renderToys(toys){
-    toys.forEach(toy => {
-      const cardForToy = createCardForToy(toy);
-      appendChildCardToContainer(cardForToy);
-
-    })
-  }
+  
 });
+
+function renderToys(toys){
+  toys.forEach(toy => {
+    const cardForToy = createCardForToy(toy);
+    appendChildCardToContainer(cardForToy);
+
+  })
+}
 
 function appendChildCardToContainer(card){
   getToyFormContainer().appendChild(card);

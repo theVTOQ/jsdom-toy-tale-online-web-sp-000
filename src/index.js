@@ -127,6 +127,7 @@ function editToyWithId(id, name, image, likes){
   const existingCard = document.getElementById(`toy-with-id-${id}`);
   existingCard.remove();
   appendChildCardToContainer(createCardForToy(editedToy));
+  retun editedToy;
 }
 
 function getToyFormContainer(){

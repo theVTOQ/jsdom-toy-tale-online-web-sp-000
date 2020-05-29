@@ -112,13 +112,13 @@ function createNewToyWithFetch(name, image){
   .catch(error => alert(error.message));
 }
 
-function updateToyWithId(id, name, image, likes){
-  let data = {
-    id: id,
-    name: name,
-    image: image,
-    likes: likes
-  }
+function updateToy(id, data){
+  // let data = {
+  //   id: id,
+  //   name: name,
+  //   image: image,
+  //   likes: likes
+  // }
 
   let configurationObject = {
     method: "PATCH",

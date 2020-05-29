@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   .catch(error => alert(error.message));
 
   //add event listeners...
-  
+
 });
 
 function renderToys(toys){

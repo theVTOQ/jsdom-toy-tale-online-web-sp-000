@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function createNewToy(newToyName, newToyImage){
-    renderToys([createNewToyWithFetch(newToyName, newToyImage)]);
+    const newToy = createNewToyWithFetch(newToyName, newToyImage);
+    appendChildCardToContainer(createCardForToy(newToy));
   }
 
   //fetch and render all toys:

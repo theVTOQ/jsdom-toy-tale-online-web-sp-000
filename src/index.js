@@ -62,20 +62,7 @@ function createCardForToy(toy){
   toyLikeButton.className = "like-btn";
   toyLikeButton.innerHTML = "Like <3";
 
-  toyLikeButton.addEventListener("click", () => {
-    let newLikesTotal = parseInt(toy.likes) + 1;
-    const updatedToy = updateToyWithId(toy.id, toy.name, toy.image, newLikesTotal);
-    toyLikes.innerHTML = `${newLikesTotal} Likes`;
-    //const existingCard = document.getElementById(`toy-with-id-${toy.id}`);
-    //const likesForCard = existingCard.querySelector("p");
-    // console.log(`Updated Toy: ${updatedToy}`);
-    // console.log(`Updated Likes: ${updatedToy.likes}`);
-    //
-    // likesForCard.innerText = `${updatedToy.likes} Likes`;
-    //existingCard.remove();
-
-    //appendChildCardToContainer(createCardForToy(updatedToy));
-  })
+  toyLikeButton.addEventListener("click", incrementLikesForToyWithId(toy.id));
 
   const divChildren = [toyHeading, toyImg, toyLikes, toyLikeButton];
   divChildren.forEach(child => {
@@ -85,6 +72,13 @@ function createCardForToy(toy){
   //giving newToyDiv a unique id
   newToyDiv.id = `toy-with-id-${toy.id}`;
   return newToyDiv;
+}
+
+function incrementLikesForToyWithId(id){
+  const toy = 
+  let newLikesTotal = parseInt(toy.likes) + 1;
+  const updatedToy = updateToyWithId(toy.id, toy.name, toy.image, newLikesTotal);
+  toyLikes.innerHTML = `${newLikesTotal} Likes`;
 }
 
 function createNewToyWithFetch(name, image){
@@ -136,7 +130,7 @@ function getToyFormContainer(){
   return document.querySelector(".container");
 }
 
-function fetchIndividualToyFromDB(id){
+function fetchToyFromDB(id){
   return fetch(`http://localhost:3000/toys/${id}`)
   .then(response => response.json())
   .then(json => console.log(json))

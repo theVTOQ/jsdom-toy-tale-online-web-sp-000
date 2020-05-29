@@ -93,14 +93,10 @@ function createNewToyWithFetch(name, image){
     body: JSON.stringify(formData)
   };
 
-  const newToy = fetch("http://localhost:3000/toys", configurationObject)
+  return fetch("http://localhost:3000/toys", configurationObject)
   .then(response => response.json())
   .then(object => console.log(object))
   .catch(error => alert(error.message));
-
-  //renderToys([newToy]);
-  appendChildCardToContainer(newToy);
-  return newToy;
 }
 
 function updateToyWithId(id, name, image, likes){

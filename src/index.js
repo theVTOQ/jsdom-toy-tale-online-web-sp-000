@@ -124,18 +124,16 @@ function editToyWithId(id, name, image, likes){
   .then(json => console.log(json))
   .catch(error => alert(error.message));
 
-  const existingCard = document.getElementById
+  const existingCard = document.getElementById(`toy-with-id-${editedToy.id}`);
+  existingCard.remove();
+  appendChildCardToContainer(createCardForToy(editedToy));
 }
 
 function getToyFormContainer(){
   return document.querySelector(".container");
 }
 
-function clearToyFormContainer(){
-
-}
-
-function fetchIndividualToy(id){
+function fetchIndividualToyFromDB(id){
   return fetch(`http://localhost:3000/toys/${id}`)
   .then(response => response.json())
   .then(json => console.log(json))

@@ -66,12 +66,7 @@ function createCardForToy(toy){
   toyLikeButton.className = "like-btn";
   toyLikeButton.innerHTML = "Like <3";
 
-  toyLikeButton.addEventListener("click", function(){
-    //const likesTotal = document.querySelector(`#toy-with-id${toy.id}`);
-    const newLikesTotal = parseInt(toy.likes) + 1;
-    updateToyWithId(toy.id, toy.name, toy.image, newLikesTotal);
-    toyLikes.innerHTML = newLikesTotal;
-  });
+  toyLikeButton.addEventListener("click", incrementLikesForToyWithId(toy.id));
   const divChildren = [toyHeading, toyImg, toyLikes, toyLikeButton];
   divChildren.forEach(child => {
     newToyDiv.appendChild(child);
@@ -82,12 +77,12 @@ function createCardForToy(toy){
   return newToyDiv;
 }
 
-// function incrementLikesForToyWithId(id){
-//   const toy = fetchToyFromDB(id);
-//   const newLikesTotal = parseInt(toy.likes) + 1;
-//   const updatedToy = updateToyWithId(toy.id, toy.name, toy.image, newLikesTotal);
-//   return newLikesTotal;
-// }
+function incrementLikesForToyWithId(id){
+  const toy = fetchToyFromDB(id);
+  const newLikesTotal = parseInt(toy.likes) + 1;
+  const updatedToy = updateToyWithId(toy.id, toy.name, toy.image, newLikesTotal);
+  return newLikesTotal;
+}
 
 function createNewToyWithFetch(name, image){
   let formData = {

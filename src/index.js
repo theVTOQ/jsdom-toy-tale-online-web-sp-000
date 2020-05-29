@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     toys.forEach(toy => {
       const cardForToy = createCardForToy(toy);
       appendChildCardToContainer(cardForToy);
-      
+
     })
   }
 });

@@ -132,7 +132,7 @@ function getToyFormContainer(){
 }
 
 function clearToyFormContainer(){
-  
+
 }
 
 function fetchIndividualToy(id){

@@ -69,7 +69,7 @@ function createCardForToy(toy){
     //const likesTotal = document.querySelector(`#toy-with-id${toy.id}`);
     const newLikesTotal = parseInt(toy.likes) + 1;
     updateToyWithId(toy.id, toy.name, toy.image, newLikesTotal);
-    toyLikes.innerHTML = incrementLikesForToyWithId(toy.id);
+    toyLikes.innerHTML = newLikesTotal;
   });
   const divChildren = [toyHeading, toyImg, toyLikes, toyLikeButton];
   divChildren.forEach(child => {

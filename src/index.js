@@ -65,7 +65,7 @@ function createCardForToy(toy){
   toyLikeButton.addEventListener("click", () => {
     const newLikesTotal = parseInt(toy.likes) + 1;
     const updatedToy = updateToyWithId(toy.id, toy.name, toy.image, newLikesTotal);
-    const existingCard = document.getElementById(`toy-with-id-${id}`);
+    const existingCard = document.getElementById(`toy-with-id-${toy.id}`);
     existingCard.remove();
 
     appendChildCardToContainer(createCardForToy(updatedToy));

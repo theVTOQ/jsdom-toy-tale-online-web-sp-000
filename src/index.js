@@ -62,10 +62,6 @@ function createCardForToy(toy){
   toyLikeButton.className = "like-btn";
   toyLikeButton.innerHTML = "Like <3";
 
-  toyLikeButton.addEventListener("click", function(){
-    const likesTotal = document.querySelector(`#toy-with-id${toy.id}`);
-    likesTotal.innerHTML = incrementLikesForToyWithId(toy.id);
-  });
 
   const divChildren = [toyHeading, toyImg, toyLikes, toyLikeButton];
   divChildren.forEach(child => {
@@ -74,6 +70,11 @@ function createCardForToy(toy){
 
   //giving newToyDiv a unique id
   newToyDiv.id = `toy-with-id-${toy.id}`;
+
+  toyLikeButton.addEventListener("click", function(){
+    const likesTotal = document.querySelector(`#toy-with-id${toy.id}`);
+    likesTotal.innerHTML = incrementLikesForToyWithId(toy.id);
+  });
   return newToyDiv;
 }
 

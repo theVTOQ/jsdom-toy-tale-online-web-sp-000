@@ -68,6 +68,8 @@ function createCardForToy(toy){
 
     const existingCard = document.getElementById(`toy-with-id-${toy.id}`);
     const likesForCard = existingCard.querySelector("p");
+    let newLikesTotal = parseInt(updatedToy.likes) + 1;
+    
     likesForCard.innerText = `${newLikesTotal} Likes`;
     //existingCard.remove();
 

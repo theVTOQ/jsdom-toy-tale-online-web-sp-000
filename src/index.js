@@ -87,7 +87,7 @@ function incrementLikesForToyWithId(id){
   const currentLikes = parseInt(likesDisplay.innerText);
   const newLikesTotal = currentLikes + 1;
   updateToy(id, {likes: newLikesTotal});
-  likesDisplay.innerHTML = newLikesTotal;
+  likesDisplay.innerHTML = `${newLikesTotal} Likes`;
 }
 
 function createNewToyWithFetch(name, image){

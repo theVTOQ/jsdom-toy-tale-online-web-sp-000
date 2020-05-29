@@ -63,7 +63,7 @@ function createCardForToy(toy){
 
   toyLikeButton.addEventListener("click", () => {
     const newLikesTotal = parseInt(toy.likes) + 1;
-    editToyWithId(toy.id, toy.name, newLikesTotal);
+    editToyWithId(toy.id, toy.name, toy.image, newLikesTotal);
   })
 
   const divChildren = [toyHeading, toyImg, toyLikes, toyLikeButton];

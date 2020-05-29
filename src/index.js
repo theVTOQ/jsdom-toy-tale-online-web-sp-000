@@ -71,6 +71,8 @@ function createCardForToy(toy){
     newToyDiv.appendChild(child);
   });
 
+  //giving newToyDiv a unique id
+  newToyDiv.id = `toy-with-id-${toy.id}`;
   return newToyDiv;
 }
 
@@ -117,14 +119,20 @@ function editToyWithId(id, name, image, likes){
     body: JSON.stringify(data)
   }
 
-  return fetch(`http://localhost:3000/toys/${id}`, configurationObject)
+  const editedToy = fetch(`http://localhost:3000/toys/${id}`, configurationObject)
   .then(response => response.json())
   .then(json => console.log(json))
   .catch(error => alert(error.message));
+
+  const existingCard = document.getElementById
 }
 
 function getToyFormContainer(){
   return document.querySelector(".container");
+}
+
+function clearToyFormContainer(){
+  
 }
 
 function fetchIndividualToy(id){

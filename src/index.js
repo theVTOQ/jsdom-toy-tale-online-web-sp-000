@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   .then(objects => renderToys(objects))
   .catch(error => alert(error.message));
 
+  //add event listeners...
   function renderToys(toys){
     toys.forEach(toy => {
       const cardForToy = createCardForToy(toy);
@@ -64,6 +65,12 @@ function createCardForToy(toy){
   toyLikeButton.className = "like-btn";
   toyLikeButton.innerHTML = "Like <3";
 
+  toyLikeBtn.addEventListener("click", function(){
+    //const likesTotal = document.querySelector(`#toy-with-id${toy.id}`);
+    const newLikesTotal = parseInt(toy.likes) + 1;
+    updateToyWithId(toy.id, toy.name, toy.image, newLikesTotal);
+    toyLikes.innerHTML = incrementLikesForToyWithId(toy.id);
+  });
   const divChildren = [toyHeading, toyImg, toyLikes, toyLikeButton];
   divChildren.forEach(child => {
     newToyDiv.appendChild(child);

@@ -40,7 +40,6 @@ function renderToys(toys){
   toys.forEach(toy => {
     const cardForToy = createCardForToy(toy);
     appendChildCardToContainer(cardForToy);
-
   })
 }
 

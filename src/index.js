@@ -66,7 +66,7 @@ function createCardForToy(toy){
   toyLikeButton.className = "like-btn";
   toyLikeButton.innerHTML = "Like <3";
 
-  toyLikeBtn.addEventListener("click", function(){
+  toyLikeButton.addEventListener("click", function(){
     //const likesTotal = document.querySelector(`#toy-with-id${toy.id}`);
     const newLikesTotal = parseInt(toy.likes) + 1;
     updateToyWithId(toy.id, toy.name, toy.image, newLikesTotal);

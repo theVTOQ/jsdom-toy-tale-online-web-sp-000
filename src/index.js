@@ -69,6 +69,7 @@ function createCardForToy(toy){
   toyLikeButton.addEventListener("click", function(){
     incrementLikesForToyWithId(toy.id)
   });
+  
   const divChildren = [toyHeading, toyImg, toyLikes, toyLikeButton];
   divChildren.forEach(child => {
     newToyDiv.appendChild(child);
@@ -80,7 +81,10 @@ function createCardForToy(toy){
 }
 
 function incrementLikesForToyWithId(id){
-  const toy = fetchToyFromDB(id);
+  //const toy = fetchToyFromDB(id);
+  const existingCard = document.querySelector(`#toy-with-id-${id}`);
+  const likesDisplay = existingCard.querySelector("p");
+  const currentLikes = parseInt(likesDisplay.innerText);
   const newLikesTotal = parseInt(toy.likes) + 1;
   const updatedToy = updateToyWithId(toy.id, toy.name, toy.image, newLikesTotal);
   return newLikesTotal;

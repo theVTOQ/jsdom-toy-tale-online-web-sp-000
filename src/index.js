@@ -69,7 +69,7 @@ function createCardForToy(toy){
   toyLikeButton.addEventListener("click", function(){
     incrementLikesForToyWithId(toy.id)
   });
-  
+
   const divChildren = [toyHeading, toyImg, toyLikes, toyLikeButton];
   divChildren.forEach(child => {
     newToyDiv.appendChild(child);

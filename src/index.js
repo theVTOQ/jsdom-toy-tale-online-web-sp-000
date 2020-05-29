@@ -116,15 +116,10 @@ function updateToyWithId(id, name, image, likes){
     body: JSON.stringify(data)
   }
 
-  const updatedToy = fetch(`http://localhost:3000/toys/${id}`, configurationObject)
+  return fetch(`http://localhost:3000/toys/${id}`, configurationObject)
   .then(response => response.json())
   .then(json => console.log(json))
-  .catch(error => alert(error.message));
-
-  const existingCard = document.getElementById(`toy-with-id-${id}`);
-  existingCard.remove();
-  appendChildCardToContainer(createCardForToy(updatedToy));
-  return updatedToy;
+  .catch(error => alert(error.message));  
 }
 
 function getToyFormContainer(){

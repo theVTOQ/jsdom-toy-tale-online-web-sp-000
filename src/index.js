@@ -64,7 +64,11 @@ function createCardForToy(toy){
 
   toyLikeButton.addEventListener("click", () => {
     const newLikesTotal = parseInt(toy.likes) + 1;
-    updateToyWithId(toy.id, toy.name, toy.image, newLikesTotal);
+    const updatedToy = updateToyWithId(toy.id, toy.name, toy.image, newLikesTotal);
+    const existingCard = document.getElementById(`toy-with-id-${id}`);
+    existingCard.remove();
+
+    appendChildCardToContainer(createCardForToy(updatedToy));
   })
 
   const divChildren = [toyHeading, toyImg, toyLikes, toyLikeButton];

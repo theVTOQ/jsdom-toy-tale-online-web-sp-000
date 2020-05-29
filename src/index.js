@@ -86,7 +86,7 @@ function incrementLikesForToyWithId(id){
   const likesDisplay = existingCard.querySelector("p");
   const currentLikes = parseInt(likesDisplay.innerText);
   const newLikesTotal = currentLikes + 1;
-  updateToy({id: id, likes: newLikesTotal});
+  updateToy(id, {likes: newLikesTotal});
   likesDisplay.innerHTML = newLikesTotal;
 }
 

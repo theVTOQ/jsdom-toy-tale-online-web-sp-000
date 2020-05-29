@@ -128,7 +128,7 @@ function updateToyWithId(id, name, image, likes){
 
   return fetch(`http://localhost:3000/toys/${id}`, configurationObject)
   .then(response => response.json())
-  .then(json => console.log(`Toy Object: ${json}`))
+  .then(json => console.log("Toy Object: " + json))
   .catch(error => alert(error.message));
 }
 

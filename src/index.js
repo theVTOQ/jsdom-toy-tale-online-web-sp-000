@@ -102,7 +102,7 @@ function createNewToyWithFetch(name, image){
   return newToy;
 }
 
-function editToyWithId(id, name, image, likes){
+function updateToyWithId(id, name, image, likes){
   let data = {
     id: id,
     name: name,
@@ -119,7 +119,7 @@ function editToyWithId(id, name, image, likes){
     body: JSON.stringify(data)
   }
 
-  const editedToy = fetch(`http://localhost:3000/toys/${id}`, configurationObject)
+  const updatedToy = fetch(`http://localhost:3000/toys/${id}`, configurationObject)
   .then(response => response.json())
   .then(json => console.log(json))
   .catch(error => alert(error.message));
@@ -127,7 +127,7 @@ function editToyWithId(id, name, image, likes){
   const existingCard = document.getElementById(`toy-with-id-${id}`);
   existingCard.remove();
   appendChildCardToContainer(createCardForToy(editedToy));
-  retun editedToy;
+  retun updatedToy;
 }
 
 function getToyFormContainer(){

@@ -102,7 +102,7 @@ function createNewToyWithFetch(name, image){
 }
 
 function editToyWithId(id, name, image, likes){
-  let data = { 
+  let data = {
     likes: toy.likes
   }
   let configurationObject = {
